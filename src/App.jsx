@@ -1,26 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
 import useCountdownTimer from './components/timer/useCountdownTimer';
+import Question from './components/Questions/Question';
+import Answer from './components/Answers/Answer';
+import Modal from './components/Modal/Modal';
 
-function App() {
-  const [isTimeLeft, minutes, seconds] = useCountdownTimer(3,66)
+
+const App = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(true)
+  const [groupNumber, setgroupNumber] = useState(0)
+
   return (
     <div className="App">
-      <header className="App-header">
-        {minutes.toString().padStart(2, "0")}:{seconds.toString().padStart(2, "0")}
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to .
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Modal isOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} setGroupNumber={setgroupNumber} />
+      <div className="body">
+        <Question />
+        <Answer />
+      </div>
     </div>
   );
 }
