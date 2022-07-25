@@ -1,8 +1,7 @@
 import React from 'react'
 import './Modal.css'
-import ReactModal from 'react-modal';
 
-const Modal = ({ isOpen, setModalIsOpen, setGroupNumber }) => {
+const Modal = ({ setModalIsOpen, setGroupNumber }) => {
 
   const handleSetGroupNumber = event => {
     event.preventDefault()
@@ -11,9 +10,12 @@ const Modal = ({ isOpen, setModalIsOpen, setGroupNumber }) => {
 
   return (
     <div className="modal">
-      <div className='ModalDiv'>
-        <input type="text" onChange={handleSetGroupNumber} />
-        < button onClick={() => { setModalIsOpen(false) }}> Aceptar</ button>
+      <div className="modal-content">
+        <div className="modal-body">
+          <label>Introduce el número de tu grupo: </label>
+          <input type="text" onChange={handleSetGroupNumber} />
+          < button onClick={() => { setModalIsOpen(false); console.log() }}> Aceptar</ button>
+        </div>
       </div>
 
     </div >)

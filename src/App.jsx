@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
-import useCountdownTimer from './components/timer/useCountdownTimer';
-import Question from './components/Questions/Question';
-import Answer from './components/Answers/Answer';
-import Modal from './components/Modal/Modal';
 
+import { Routes, Route } from 'react-router-dom';
+import QuestionPage from './components/QuestionPage/QuestionPage';
 
 const App = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(true)
-  const [groupNumber, setgroupNumber] = useState(0)
 
   return (
     <div className="App">
-      <Modal isOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} setGroupNumber={setgroupNumber} />
-      <div className="body">
-        <Question />
-        <Answer />
-      </div>
+      <Routes>
+        <Route path="question/:questionID" element={<QuestionPage />} />
+      </Routes>
     </div>
   );
 }

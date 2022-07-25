@@ -4,9 +4,10 @@ import './Question.css'
 //Show question
 
 const Question = () => {
+
   return (
     <div className='questionDiv'>
-      Hola
+      QUESTION
     </div>
   );
 }

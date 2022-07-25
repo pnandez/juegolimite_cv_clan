@@ -1,0 +1,11 @@
+.choices-container {
+  display: block;
+  padding-right: 20%;
+  padding-left: 30%;
+  padding-top: 10%;
+}
+
+.choice-element {
+  display: flex;
+  margin-top: 5%;
+}

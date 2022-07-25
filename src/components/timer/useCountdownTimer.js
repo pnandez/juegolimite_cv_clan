@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import  { useState, useEffect } from 'react'
 
 const useCountdownTimer = (minutes = 0, seconds =59 ) => {
   while(seconds > 60){
