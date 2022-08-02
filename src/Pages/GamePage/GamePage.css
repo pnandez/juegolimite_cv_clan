@@ -3,3 +3,16 @@
   color: red;
   display: block;
 }
+
+.incorrect-id-gif-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0px;
+  bottom: 0px;
+}
+
+.incorrect-id-gif {
+  margin-top: 80%;
+  width: 250px;
+}

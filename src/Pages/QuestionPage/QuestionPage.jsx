@@ -32,12 +32,15 @@ const QuestionPage = ({ questionID, groupNumber, question }) => {
   }
 
 
+
+  console.log(question)
+
   return (
     isQuestionCorrectlyAnswered ?
       <HintPage hint={hint} />
       :
       <div div className="question-body" >
-        {(question === null) || isLoading ?
+        {(question === undefined) || isLoading ?
           <img src={waitingGif} className="loading-img" />
           :
           <>

@@ -65,6 +65,15 @@ const getGame = () => {
 
 }
 
+const existsQuestion = async (questionID) => {
+  const gameQuestions = await (await getGame()).questions
+
+  console.log("AAAAA")
+  const existsQuestion = await gameQuestions.find(q => q.questionId === questionID) ? true : false;
+  console.log(existsQuestion)
+  return existsQuestion
+}
+
 const existsGroup = async (groupCode) => {
   const gameGroups = await (await getGame()).groups
   const groupExists = await gameGroups.find(g => g.codeWord === groupCode) ? true : false;
@@ -85,7 +94,7 @@ const getQuestion = async (questionId, groupId) => {
     .then(async response => {
       return response.data
     }).catch(
-      () => errorQuestion
+      () => null
     )
 }
 
@@ -101,4 +110,4 @@ const sendAnswer = async (answer, questionID, groupID) => {
 }
 
 
-export default { getGame, getQuestion, sendAnswer, existsGroup }
+export default { getGame, getQuestion, sendAnswer, existsGroup, existsQuestion }
