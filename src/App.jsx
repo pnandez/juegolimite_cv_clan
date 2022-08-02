@@ -2,14 +2,14 @@ import './App.css';
 import React, { useState } from 'react';
 
 import { Routes, Route } from 'react-router-dom';
-import QuestionPage from './components/QuestionPage/QuestionPage';
+import GamePage from './Pages/GamePage/GamePage';
 
 const App = () => {
 
   return (
     <div className="App">
       <Routes>
-        <Route path="question/:questionID" element={<QuestionPage />} />
+        <Route path="question/:questionID" element={<GamePage />} />
       </Routes>
     </div>
   );

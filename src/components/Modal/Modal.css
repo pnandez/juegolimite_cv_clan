@@ -18,10 +18,22 @@
 
 .modal-body {
   padding: 10%;
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+.error-text {
+  font-size: small;
+  color: red;
 }
 
 label {
   font-size: small;
   display: block;
   padding: 3%;
+}
+
+button {
+  margin-top: 5px;
 }

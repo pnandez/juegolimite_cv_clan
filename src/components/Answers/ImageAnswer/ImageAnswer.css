@@ -1,0 +1,8 @@
+.timer-container {
+  font-size: 70px;
+  margin: 5px;
+}
+
+.timeout-text {
+  color: red;
+}

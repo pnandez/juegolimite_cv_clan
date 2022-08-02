@@ -1,8 +1,12 @@
 .answerDiv {
   height: 50%;
-  background-color: red;
-  margin: auto;
-  font-size: 20px;
+  margin-top: 5px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.accept-button {
+  display: block;
 }

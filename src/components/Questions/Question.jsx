@@ -3,11 +3,11 @@ import './Question.css'
 //First fecth question
 //Show question
 
-const Question = () => {
+const Question = ({ formulation }) => {
 
   return (
     <div className='questionDiv'>
-      QUESTION
+      {formulation}
     </div>
   );
 }
