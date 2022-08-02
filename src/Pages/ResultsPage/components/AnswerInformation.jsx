@@ -8,7 +8,7 @@ const AnswerInformation = ({ answer, groups }) => {
     console.log(finish)
     const diffInMS = Math.abs(start - finish)
 
-    const res = Math.floor((diffInMS / 1000) / 60)
+    const res = Math.floor((diffInMS / 1000))
     return res > 0 ? res : -1
   }
 
@@ -19,7 +19,7 @@ const AnswerInformation = ({ answer, groups }) => {
   return (
     <div>
       <h3>Grupo: </h3> {getGroupCodeWord(answer.groupId)}
-      <h5>Tiempo en minutos: </h5> {getTimeUsedInMinutes(answer.startedAt, answer.answeredAt)}
+      <h5>Tiempo en segundos: </h5> {getTimeUsedInMinutes(answer.startedAt, answer.answeredAt)}
       <hr />
     </div>
   )
