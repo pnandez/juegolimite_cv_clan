@@ -23,15 +23,16 @@
   margin: auto;
 }
 
-.error-text {
-  font-size: small;
-  color: red;
-}
+
 
 label {
   font-size: small;
   display: block;
   padding: 3%;
+}
+
+input {
+  text-align: center;
 }
 
 button {

@@ -8,9 +8,6 @@ const Modal = ({ handleAcceptGroup, setGroupNumber, groupError }) => {
     setGroupNumber(event.target.value)
   }
 
-  useEffect(() => {
-    console.log("SDAFSDJKLGFSDFJLGJKDL")
-  }, [groupError]);
 
   return (
     <div className="modal">
@@ -19,7 +16,7 @@ const Modal = ({ handleAcceptGroup, setGroupNumber, groupError }) => {
           <label>Introduce el número de tu grupo: </label>
           <input type="text" onChange={handleSetGroupNumber} />
           < button onClick={handleAcceptGroup}> Aceptar</ button>
-          {groupError ? <p className='error-text'>El grupo no existe</p> : <></>}
+          {groupError ? <p className='error-text'>El grupo no existe</p> : <p className='error-text'></p>}
         </div>
 
       </div>

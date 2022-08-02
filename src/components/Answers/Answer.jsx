@@ -5,7 +5,7 @@ import ImageAnswer from './ImageAnswer/ImageAnswer';
 import MultipleChoiceAnswer from './MultipleChoice/MultipleChoiceAnswer';
 import TextFieldAnswer from './TextField/TextFieldAnswer';
 
-const Answer = ({ question, setAnswer }) => {
+const Answer = ({ question, setAnswer, handleAcceptButton, errorInAnswer }) => {
   const questionType = question.questionType
 
 
@@ -21,11 +21,9 @@ const Answer = ({ question, setAnswer }) => {
       break;
 
     case "IMAGE":
-      return (
-        <div className='answerDiv'>
-          <ImageAnswer />
-        </div>
-      )
+      AnswerElement = <TextFieldAnswer setAnswer={setAnswer} />
+      break;
+
     default:
       return <></>
   }
@@ -33,7 +31,8 @@ const Answer = ({ question, setAnswer }) => {
   return (
     <div className='answerDiv'>
       {AnswerElement}
-      <button className='accept-button'>Aceptar</button>
+      {errorInAnswer ? <p className='error-text'>Respuesta Erronea</p> : <p></p>}
+      <button className='accept-button' onClick={handleAcceptButton}>Aceptar</button>
     </div>
   )
 }

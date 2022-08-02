@@ -1,7 +1,13 @@
 import axios from 'axios';
 
-const hostURL = "https://dgtz3f6xwh.execute-api.eu-west-1.amazonaws.com/Stage/"
+const hostURL = "https://dgtz3f6xwh.execute-api.eu-west-1.amazonaws.com/Stage"
 const gameId = "a357913e-f898-47cb-97a0-250bc6b0ae4b"
+
+const headersList = {
+  "Accept": "*/*",
+  "Content-Type": "application/json"
+}
+
 
 const mockQuestions = [
   {
@@ -45,6 +51,10 @@ const mockGame = {
   "createdAt": 1
 }
 
+const errorQuestion = {
+  "formulation": "Ha habido un error, vuelve a intentarlo"
+}
+
 const getGame = () => {
   return axios.get(`${hostURL}/game/${gameId}`)
     .then(response => {
@@ -64,31 +74,31 @@ const existsGroup = async (groupCode) => {
 }
 
 const getQuestion = async (questionId, groupId) => {
-  return axios.get(`${hostURL}/game/${gameId}/questions/${questionId}/reveal`)
-    .then(response => {
-      console.log(response)
+
+  return axios.post(`${hostURL}/game/${gameId}/questions/${questionId}/reveal`, {
+    "codeWord": groupId,
+  }, {
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+    .then(async response => {
       return response.data
-    }).catch(() => false
+    }).catch(
+      () => errorQuestion
     )
 }
 
-const getMockQuestion = (questionID, groupID) => {
-  const questionToReturn = mockQuestions.find(q => q.questionId === questionID)
-  if (questionToReturn) {
-    return questionToReturn
-  }
-  return new Error()
-}
 
-const sendAnswer = (answer, questionID, groupID) => {
-  return axios.post(`${hostURL}/game/${gameId}/questions/${questionID}`, {
-    questionID: questionID,
+const sendAnswer = async (answer, questionID, groupID) => {
+  console.log("ASDASDSFDSF")
+  return axios.post(`${hostURL}/game/${gameId}/questions/${questionID}/answer`, {
     answer: answer,
-    groupID: groupID
+    codeWord: groupID
   })
     .then(res => res.data)
-    .catch(e => new Error())
+    .catch(e => false)
 }
 
 
-export default { getGame, getQuestion, getMockQuestion, sendAnswer, existsGroup }
+export default { getGame, getQuestion, sendAnswer, existsGroup }

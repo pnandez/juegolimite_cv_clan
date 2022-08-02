@@ -6,6 +6,7 @@ const ImageAnswer = () => {
   const [isTimeLeft, minutes, seconds] = useCountdownTimer(0, 1)
   return (
     <div className='timer-container'>
+      Debes enviar la imagen solicitada a tus scouters
       {isTimeLeft ?
         <div className='timer-text'>{minutes}:{seconds.toLocaleString("en-US", { minimumIntegerDigits: 2, useGrouping: false })}</div>
         :

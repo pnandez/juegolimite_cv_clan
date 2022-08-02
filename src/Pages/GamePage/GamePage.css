@@ -1,8 +1,5 @@
-.question-body {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  text-align: center;
+.error-text {
+  font-size: small;
+  color: red;
+  display: block;
 }

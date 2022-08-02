@@ -1,0 +1,17 @@
+.question-body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+  flex-direction: column;
+}
+
+.loading-img {
+  width: 30%;
+  align-self: center;
+}
