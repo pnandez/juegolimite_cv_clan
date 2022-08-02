@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const hostURL = "https://dgtz3f6xwh.execute-api.eu-west-1.amazonaws.com/Stage"
-const gameId = "a357913e-f898-47cb-97a0-250bc6b0ae4b"
+const gameId = "b68522c7-684c-4f2f-9828-e39c27cb9ddb"
 
 const headersList = {
   "Accept": "*/*",

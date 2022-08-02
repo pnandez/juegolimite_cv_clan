@@ -59,7 +59,6 @@ const GamePage = () => {
           :
           <QuestionPage groupNumber={groupNumber} questionID={questionID} question={question} />
         }
-
       </div>
     )
 

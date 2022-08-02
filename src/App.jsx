@@ -11,7 +11,7 @@ const App = () => {
     <div className="App">
       <Routes>
         <Route path="question/:questionID" element={<GamePage />} />
-        <Route path="results" element={<ResultsPage />} />
+        <Route path="alcachofa/results" element={<ResultsPage />} />
       </Routes>
     </div>
   );
