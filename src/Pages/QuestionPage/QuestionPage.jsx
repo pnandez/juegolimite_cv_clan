@@ -32,9 +32,6 @@ const QuestionPage = ({ questionID, groupNumber, question }) => {
   }
 
 
-
-  console.log(question)
-
   return (
     isQuestionCorrectlyAnswered ?
       <HintPage hint={hint} />

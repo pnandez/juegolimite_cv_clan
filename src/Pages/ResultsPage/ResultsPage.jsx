@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import requests from '../../requests/requests'
 
 const ResultsPage = () => {
   const [game, setgame] = useState(null)
 
   useEffect(async () => {
-    await requests
+    setgame(await requests.getGame())
   }, [])
 
   return (

@@ -23,7 +23,7 @@ const GamePage = () => {
   const [groupNumber, setgroupNumber] = useState(0)
   const [groupError, setGroupError] = useState(false)
   const [question, setquestion] = useState(undefined)
-  const [questionIDExists, setQuestionIDExists] = useState(null)
+  const [questionIDExists, setQuestionIDExists] = useState(true)
 
   const questionID = useParams().questionID
 
@@ -49,7 +49,7 @@ const GamePage = () => {
     console.log("ASDFJKFSD")
     return (
       <div className="incorrect-id-gif-div">
-        < img className="incorrect-id-gif" src={outOfHereGIf} alt="" srcset="" />
+        < img className="incorrect-id-gif" src={outOfHereGIf} alt="" />
       </div >
     )
   } else {
