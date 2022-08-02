@@ -23,10 +23,13 @@ const GamePage = () => {
   const [groupNumber, setgroupNumber] = useState(0)
   const [groupError, setGroupError] = useState(false)
   const [question, setquestion] = useState(undefined)
+  const [questionIDExists, setQuestionIDExists] = useState(null)
 
   const questionID = useParams().questionID
 
-
+  useEffect(async () => {
+    setQuestionIDExists(await requests.existsQuestion(questionID))
+  }, [])
 
   const handleGroupInput = async () => {
     const result = await requests.existsGroup(groupNumber)
@@ -42,7 +45,7 @@ const GamePage = () => {
 
   }
 
-  if (requests.existsQuestion(questionID)) {
+  if (!questionIDExists) {
     console.log("ASDFJKFSD")
     return (
       <div className="incorrect-id-gif-div">
