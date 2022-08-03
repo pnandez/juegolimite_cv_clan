@@ -3,6 +3,7 @@ import React from 'react'
 const AnswerInformation = ({ answer, groups }) => {
 
   const getTimeUsedInMinutes = (startedAt, finishedAt) => {
+    if (finishedAt < 0) return "Respondiendo"
     const start = new Date(startedAt)
     const finish = new Date(finishedAt)
     console.log(finish)
